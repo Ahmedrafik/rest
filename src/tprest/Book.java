@@ -2,8 +2,13 @@ package tprest;
 
 import java.util.Collection;
 
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+@XmlRootElement(name="Book")
 public class Book {
 
 	@JsonProperty
@@ -24,6 +29,7 @@ public class Book {
 		this.isbn = isbn;
 	}
 
+	@XmlElement(name="title")
 	public String getTitle() {
 		return title;
 	}
@@ -32,6 +38,7 @@ public class Book {
 		this.title = title;
 	}
 
+	@XmlAttribute(name="id")
 	public int getId() {
 		return id;
 	}
@@ -40,6 +47,7 @@ public class Book {
 		this.id = id;
 	}
 
+	@XmlAttribute(name="isbn")
 	public String getIsbn() {
 		return isbn;
 	}
@@ -48,6 +56,7 @@ public class Book {
 		this.isbn = isbn;
 	}
 
+	@XmlAttribute(name=("authors"))
 	public Collection<String> getAuthors() {
 		return authors;
 	}
